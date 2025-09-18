@@ -1,4 +1,4 @@
-// CircularText.js
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaPython, FaGithub, FaNodeJs } from "react-icons/fa";
@@ -7,18 +7,18 @@ import { SiTailwindcss, SiLeetcode, SiMongodb, SiNextdotjs, SiExpress } from "re
 const CircularText = ({ spinDuration = 20, className }) => {
     const [radius, setRadius] = useState(220);
 
-    // 🔥 Resize on screen change
+
     useEffect(() => {
         const updateRadius = () => {
             if (window.innerWidth < 640) {
-                // 📱 Mobile
-                setRadius(120);
+            
+                setRadius(180);
             } else if (window.innerWidth < 1024) {
-                // 📲 Tablet
+    
                 setRadius(180);
             } else {
-                // 💻 Laptop/Desktop
-                setRadius(220);
+        
+                setRadius(240);
             }
         };
 

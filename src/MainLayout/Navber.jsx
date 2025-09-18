@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router";
+import logo from '../assets/logo.png'
 
 const Navber = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ const Navber = () => {
                     className="text-2xl font-bold text-green-400"
                     onClick={() => setIsOpen(false)}
                 >
-                    Adnan
+                    <img className="w-24" src={logo} alt="" />
                 </Link>
 
 

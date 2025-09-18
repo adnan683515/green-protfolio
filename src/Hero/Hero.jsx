@@ -4,10 +4,12 @@ import photo from '../assets/adnanPhoto.png'
 import TextType from './TextType';
 import ShinyText from './ShinyText';
 import { Link } from 'react-router';
+import { FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const Hero = () => {
     return (
-        <div className="flex flex-col md:flex-row justify-between items-center h-screen px-8">
+        <div className="flex flex-col px-4 sm:px-0 md:flex-row my-10 justify-between items-center  ">
 
 
             <div className="flex-1 space-y-6 border md:pr-12 my-4 sm:my-0">
@@ -29,16 +31,61 @@ const Hero = () => {
                 <p className="text-gray-300 text-[14px] sm:text-lg max-w-lg">
                     Web developer from <span className="text-green-400">Bangladesh</span>, building modern & responsive web applications.
                 </p>
+
+                <div className="flex items-center gap-3">
+                    <a
+                        href="https://www.linkedin.com/in/golam-faruk-adnan-bb7794352/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="flex items-center justify-center p-2 rounded-full shadow-md bg-white/10 text-green-400 hover:bg-green-500 hover:text-black transition"
+                    >
+                        <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </a>
+
+
+                    <a
+                        href="https://github.com/adnan683515" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        className="flex items-center justify-center p-2  shadow-md bg-white/10 rounded-full text-green-400 hover:bg-green-500 hover:text-black transition"
+                    >
+                        <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </a>
+
+
+                    <a
+                        href="https://www.facebook.com/golam.faruk.adnan" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                        className="flex items-center justify-center p-2 shadow-md bg-white/10 rounded-full text-green-400 hover:bg-green-500 hover:text-black transition"
+                    >
+                        <FaFacebook className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </a>
+
+
+                    <a
+                        href="https://leetcode.com/u/Golam_Faruk_Adnan/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LeetCode"
+                        className="flex items-center justify-center shadow bg-white/10  p-2 rounded-full text-green-400 hover:bg-green-500 hover:text-black transition"
+                    >
+                        <SiLeetcode className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </a>
+                </div>
                 <div className="flex flex-wrap gap-2 sm:gap-4">
                     <Link
                         to="/projects"
-                        className="px-3 sm:px-6 py-1 sm:py-2 bg-green-400 text-black rounded-lg hover:bg-green-600 transition text-sm sm:text-base"
+                        className="px-3 sm:px-6 py-1 sm:py-2 bg-green-400 shadow-lg shadow-white/30 text-black rounded-lg hover:bg-green-600 transition text-sm sm:text-base"
                     >
                         My Projects
                     </Link>
                     <Link
                         to="/contact"
-                        className="px-3 sm:px-6 py-1 sm:py-2 border border-green-400 text-green-400 rounded-lg hover:bg-green-400 hover:text-black transition text-sm sm:text-base"
+                        className="px-3 sm:px-6 py-1 sm:py-2 border border-green-400  shadow-lg shadow-white/30 text-green-400 rounded-lg hover:bg-green-500 hover:text-black transition text-sm sm:text-base"
                     >
                         Contact Me
                     </Link>
@@ -47,8 +94,8 @@ const Hero = () => {
 
 
 
-            <div className="flex-1 py-10  flex justify-center items-center relative w-full  mt-12 md:mt-0 overflow-hidden">
-                <div className="relative w-96 h-96 md:w-[450px] md:h-[450px]"> 
+            <div className="flex-1 sm:py-10 py-0    flex justify-center items-center relative w-full  mt-12 md:mt-0 overflow-hidden">
+                <div className="relative w-full mt-10  h-[60vh] md:w-[540px] md:h-[450px]">
                     <CircularText
                         text="REACT*BITS*COMPONENTS*"
                         spinDuration={20}
@@ -57,7 +104,7 @@ const Hero = () => {
                     <img
                         src={photo}
                         alt="center"
-                        className="absolute top-1/2 left-1/2 shadow-lg shadow-green-400  w-[70%] sm:w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+                        className="absolute top-1/2 left-1/2 shadow-lg shadow-green-400  w-[80%] sm:w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full"
                     />
                 </div>
             </div>

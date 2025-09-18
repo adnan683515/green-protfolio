@@ -1,7 +1,9 @@
 
-import React from "react";
+import React, { useState } from "react";
+import ProjectsDetails from "./ProjectsDetails";
 
 const SpotlightCard = ({
+    id = '',
     image = "/project-placeholder.jpg",
     title = "Project Title",
     subtitle = "Project Subtitle",
@@ -9,10 +11,20 @@ const SpotlightCard = ({
     liveLink = "#",
     clientRepo = "#",
     serverRepo = "#",
-    viewLink = "#",
+
     spotlightColor = "rgba(0, 229, 255, 0.2)",
     className = "",
 }) => {
+
+
+
+    let [isOpen, setIsOpen] = useState(false)
+    const [storeId,setStoreId] = useState(null)
+
+
+    function close() {
+        setIsOpen(false)
+    }
     return (
         <div
             className={`relative rounded-2xl overflow-hidden shadow-2xl shadow-cyan-400/20 backdrop-blur-lg border border-cyan-300/20 p-0 ${className}`}
@@ -59,14 +71,19 @@ const SpotlightCard = ({
                     >
                         Server
                     </a>
-                    <a
-                        href={viewLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <button
+
+
+                        onClick={() => {
+                            setIsOpen(!isOpen)
+                            setStoreId(id)
+                        }}
                         className="px-4 py-1 border flex justify-center items-center border-green-400 text-green-400 rounded-lg hover:bg-green-500 hover:text-black transition"
                     >
                         View More
-                    </a>
+                    </button>
+                    {isOpen && <ProjectsDetails storeId={storeId && storeId} isOpen={isOpen} close={close} ></ProjectsDetails>}
+
                 </div>
             </div>
         </div>
@@ -79,6 +96,7 @@ const SpotlightCard = ({
 export default function SpotlightProjects() {
     const projects = [
         {
+            id: 1,
             image: "https://i.ibb.co.com/6Rzks7bw/image.png",
             title: "Blood Donation",
             subtitle: "Role-Based Full-Stack Website",
@@ -91,6 +109,7 @@ export default function SpotlightProjects() {
         }
         ,
         {
+            id: 2,
             image: "https://i.ibb.co.com/G4FPnpT9/image.png",
             title: "Doctors Point (working..)",
             subtitle: "Role-Based Fullstack Appliction",
@@ -103,6 +122,7 @@ export default function SpotlightProjects() {
         }
         ,
         {
+            id: 3,
             image: "https://i.ibb.co.com/Gw5JJH6/image.png",
             title: "B2B Marketplace",
             subtitle: "Fullstack E-commerce App",

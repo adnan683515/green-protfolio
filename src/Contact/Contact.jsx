@@ -1,7 +1,10 @@
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
 const Contact = () => {
+
+    const {contactRef} = useContext(AuthContext)
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -16,15 +19,15 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form submitted:", formData);
-     
+
         setFormData({ name: "", email: "", subject: "", message: "" });
     };
 
     return (
-        <section className="py-16 px-6 sm:px-0  text-gray-200 min-h-screen">
+        <section ref={contactRef} className="py-16 mx-2 sm:px-0  text-gray-200 min-h-screen">
             <div className="max-w-8xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-            
+
                 <div className="space-y-6">
                     <h2 className="text-4xl sm:text-5xl font-bold text-green-400">Contact Me</h2>
                     <p className="text-lg sm:text-xl text-gray-300">
@@ -37,7 +40,7 @@ const Contact = () => {
 
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-black/70 backdrop-blur-md border border-green-400/30 rounded-2xl p-8 space-y-4 shadow-lg shadow-green-400/20"
+                    className="bg-black/70 w-full mx-auto backdrop-blur-md border border-green-400/30 rounded-2xl p-8 space-y-4 shadow-lg shadow-green-400/20"
                 >
                     <div className="flex flex-col sm:flex-row gap-4">
                         <input

@@ -12,7 +12,7 @@ const CircularText = ({ spinDuration = 20, className }) => {
         const updateRadius = () => {
             if (window.innerWidth < 640) {
             
-                setRadius(180);
+                setRadius(150);
             } else if (window.innerWidth < 1024) {
     
                 setRadius(180);

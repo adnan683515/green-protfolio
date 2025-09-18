@@ -1,4 +1,4 @@
-// LanyardCard.jsx
+
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -10,18 +10,18 @@ export default function LanyardCard({
     return (
         <section className="relative w-full flex flex-col items-center py-12 sm:py-24 px-4 sm:px-12">
 
-            {/* Title */}
+
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-green-400 mb-10 sm:mb-12 text-center">
                 About Me
             </h2>
 
-            {/* Hanging string */}
+
             <div className="relative w-full flex justify-center pointer-events-none mb-8">
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-0">
                     <div className="w-1.5 h-36 sm:h-72 md:h-96 bg-gradient-to-b from-green-400/80 to-transparent mx-auto rounded-full" />
                 </div>
 
-                {/* Card */}
+
                 <motion.div
                     initial={{ y: -200, rotate: -8, opacity: 0 }}
                     whileInView={{ y: 0, rotate: [-8, 5, -3, 0], opacity: 1 }}
@@ -36,7 +36,7 @@ export default function LanyardCard({
                 >
                     <div className="w-full backdrop-blur-sm bg-black/10 border border-green-400/40 rounded-3xl shadow-md shadow-green-400/20 overflow-hidden">
 
-                        {/* Header */}
+
                         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-6 border-b border-green-400/20">
                             <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-green-400 flex-shrink-0">
                                 <img
@@ -49,17 +49,17 @@ export default function LanyardCard({
                                 <h3 className="text-lg sm:text-2xl font-bold text-green-300">{title}</h3>
                                 <p className="text-sm sm:text-base text-gray-300">Front-end Developer</p>
                             </div>
-                            <div className="mt-3 sm:mt-0">
+                            {/* <div className="mt-3 sm:mt-0">
                                 <a
                                     href={href}
                                     className="inline-block bg-green-400 text-black text-sm sm:text-base font-medium px-4 sm:px-5 py-2 rounded-xl shadow-lg shadow-white/30 hover:bg-green-500 transition"
                                 >
                                     View
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
 
-                        {/* About */}
+
                         <div className="p-6 sm:p-8 space-y-4 sm:space-y-5 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
                             <p>
                                 Hi, I’m <span className="text-green-400 font-semibold">Golam Faruk Adnan</span>, a passionate <span className="text-green-400">MERN Stack Developer</span> from Bangladesh 🇧🇩.
@@ -72,7 +72,7 @@ export default function LanyardCard({
                             </p>
                         </div>
 
-                        {/* Footer stripe */}
+
                         <div className="h-2 bg-gradient-to-r from-green-400/50 via-green-300/30 to-purple-500/20" />
                     </div>
                 </motion.div>

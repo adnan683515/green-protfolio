@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SpotlightCard from './SpotlightCard';
+import { AuthContext } from '../Context/AuthContext';
 
 const Project = () => {
+
+
+    const {targetRef} = useContext(AuthContext)
+
     return (
-        <div>
+        <div ref={targetRef}>
             <SpotlightCard></SpotlightCard>
         </div>
     );

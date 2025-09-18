@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import GlassIcons from './GlassIcons';
+import { AuthContext } from '../Context/AuthContext';
 
 const Skill = () => {
+    const { SkillRef } = useContext(AuthContext)
     return (
-        <div>
+        <div ref={SkillRef}>
 
             <div className="flex justify-center items-center mb-8">
                 <h1 className="text-green-400 text-4xl sm:text-5xl font-bold relative">

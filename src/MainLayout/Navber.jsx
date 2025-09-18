@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router";
 import logo from '../assets/logo.png'
+import { AuthContext } from "../Context/AuthContext";
 
 const Navber = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const menuItems = [
-        { name: "Home", link: "/" },
-        { name: "About", link: "/about" },
-        { name: "Projects", link: "/projects" },
-        { name: "Contact", link: "/contact" },
+        { name: "Home" },
+        { name: 'Skill' },
+        { name: "About" },
+        { name: "Projects" },
+        { name: "Contact" },
     ];
+
+
+    const { goToProjectSection, homeRef, targetRef, SkillRef, aboutRef, contactRef } = useContext(AuthContext)
+
 
     return (
         <nav className="sticky top-0 bg-white/10 backdrop-blur-md shadow-md z-50">
@@ -21,40 +27,62 @@ const Navber = () => {
 
 
 
-                <Link
-                    to="/"
+                <button
+
                     className="text-2xl font-bold text-green-400"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => goToProjectSection(homeRef)}
                 >
                     <img className="w-24" src={logo} alt="" />
-                </Link>
+                </button>
 
 
-                {/* desktop */}
 
                 <ul className="hidden md:flex space-x-8 font-medium">
                     {menuItems.map((item) => (
                         <li key={item.name}>
-                            <Link
-                                to={item.link}
+                            <button
+                                onClick={() => {
+                                    if (item.name === "Projects") {
+
+                                        goToProjectSection(targetRef)
+                                    }
+                                    else if (item?.name == 'Skill') {
+                                        goToProjectSection(SkillRef)
+                                    }
+                                    else if (item?.name == 'About') {
+                                        goToProjectSection(aboutRef)
+                                    }
+                                    else if (item?.name === 'Contact') {
+                                        goToProjectSection(contactRef)
+                                    } else {
+                                        goToProjectSection(homeRef)
+                                    }
+                                }}
                                 className="text-white hover:text-green-400 transition"
                             >
                                 {item.name}
-                            </Link>
+                            </button>
                         </li>
                     ))}
                 </ul>
 
 
-                <Link
-                    to="/resume"
-                    className="hidden md:inline-block bg-green-400 text-black px-4 py-2 rounded-lg shadow-md shadow-white/40 transition"
-                >
-                    Resume
-                </Link>
+                <div className="">
+                    <a
+                        href="https://drive.google.com/file/d/1XSQxAI_RwonvghV6mtSdy9iYxvyVcB7F/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="resume"
+                        className="hidden w-full md:inline-block bg-green-400 text-black px-4 py-2 rounded-lg shadow-md shadow-white/40 transition"
+                    >
+                        Resume
+                    </a>
+                </div>
 
 
-                {/* Mobile toggle button */}
+
+
+
                 <button
                     className="md:hidden text-2xl text-gray-600"
                     onClick={() => setIsOpen(!isOpen)}
@@ -69,23 +97,41 @@ const Navber = () => {
                     <ul className="flex flex-col space-y-4 p-4 font-medium">
                         {menuItems.map((item) => (
                             <li key={item.name}>
-                                <Link
-                                    to={item.link}
-                                    className="block text-white hover:text-green-400 transition"
-                                    onClick={() => setIsOpen(false)}
+                                <button
+                                    onClick={() => {
+                                        if (item.name === "Projects") {
+
+                                            goToProjectSection(targetRef)
+                                        }
+                                        else if (item?.name == 'Skill') {
+                                            goToProjectSection(SkillRef)
+                                        }
+                                        else if (item?.name == 'About') {
+                                            goToProjectSection(aboutRef)
+                                        }
+                                        else if (item?.name === 'Contact') {
+                                            goToProjectSection(contactRef)
+                                        } else {
+                                            goToProjectSection(homeRef)
+                                        }
+                                    }}
+                                    className="text-white hover:text-green-400 transition"
                                 >
                                     {item.name}
-                                </Link>
+                                </button>
                             </li>
                         ))}
                         <li>
-                            <Link
-                                to="/resume"
-                                className="block bg-green-400 text-black text-center px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 transition"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Resume
-                            </Link>
+                            <li className=" w-full">
+                                <a
+                                    href="https://drive.google.com/file/d/1XSQxAI_RwonvghV6mtSdy9iYxvyVcB7F/view?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full px-3 sm:px-6 py-1 sm:py-2 bg-green-400 shadow-lg shadow-white/30 text-black rounded-lg hover:bg-green-600 transition text-sm sm:text-base text-center"
+                                >
+                                    Resume
+                                </a>
+                            </li>
                         </li>
                     </ul>
                 </div>

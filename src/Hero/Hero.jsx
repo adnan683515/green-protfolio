@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CircularText from './CircularText';
 import photo from '../assets/adnanPhoto.png'
 import TextType from './TextType';
@@ -6,10 +6,12 @@ import ShinyText from './ShinyText';
 import { Link } from 'react-router';
 import { FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { AuthContext } from '../Context/AuthContext';
 
 const Hero = () => {
+    const { homeRef } = useContext(AuthContext)
     return (
-        <div className="flex flex-col px-4 sm:px-0 md:flex-row my-10 justify-between items-center  ">
+        <div ref={homeRef} className="flex flex-col px-4 sm:px-0 md:flex-row my-10 justify-between items-center  ">
 
 
             <div className="flex-1 space-y-6 border md:pr-12 my-4 sm:my-0">
@@ -34,7 +36,7 @@ const Hero = () => {
 
                 <div className="flex items-center gap-3">
                     <a
-                        href="https://www.linkedin.com/in/golam-faruk-adnan-bb7794352/" 
+                        href="https://www.linkedin.com/in/golam-faruk-adnan-bb7794352/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
@@ -45,7 +47,7 @@ const Hero = () => {
 
 
                     <a
-                        href="https://github.com/adnan683515" 
+                        href="https://github.com/adnan683515"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="GitHub"
@@ -56,7 +58,7 @@ const Hero = () => {
 
 
                     <a
-                        href="https://www.facebook.com/golam.faruk.adnan" 
+                        href="https://www.facebook.com/golam.faruk.adnan"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Facebook"
@@ -67,7 +69,7 @@ const Hero = () => {
 
 
                     <a
-                        href="https://leetcode.com/u/Golam_Faruk_Adnan/" 
+                        href="https://leetcode.com/u/Golam_Faruk_Adnan/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LeetCode"
@@ -77,12 +79,15 @@ const Hero = () => {
                     </a>
                 </div>
                 <div className="flex flex-wrap gap-2 sm:gap-4">
-                    <Link
-                        to="/projects"
+                    <a
+                        href="https://drive.google.com/file/d/1XSQxAI_RwonvghV6mtSdy9iYxvyVcB7F/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LeetCode"
                         className="px-3 sm:px-6 py-1 sm:py-2 bg-green-400 shadow-lg shadow-white/30 text-black rounded-lg hover:bg-green-600 transition text-sm sm:text-base"
                     >
-                        My Projects
-                    </Link>
+                        Resume
+                    </a>
                     <Link
                         to="/contact"
                         className="px-3 sm:px-6 py-1 sm:py-2 border border-green-400  shadow-lg shadow-white/30 text-green-400 rounded-lg hover:bg-green-500 hover:text-black transition text-sm sm:text-base"

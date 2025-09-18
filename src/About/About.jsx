@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {  useContext } from 'react';
 import LanyardCard from './LanyardCard';
+import { AuthContext } from '../Context/AuthContext';
 
 
 const About = () => {
+    const { aboutRef } = useContext(AuthContext)
     return (
-        <div>
+        <div ref={aboutRef} >
             <LanyardCard title="Golam Faruk Adnan"
                 subtitle="MERN Stack Developer"
                 img="/your-profile.jpg"

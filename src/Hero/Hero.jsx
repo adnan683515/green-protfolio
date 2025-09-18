@@ -9,7 +9,7 @@ import { SiLeetcode } from "react-icons/si";
 import { AuthContext } from '../Context/AuthContext';
 
 const Hero = () => {
-    const { homeRef } = useContext(AuthContext)
+    const { homeRef ,contactRef ,goToProjectSection } = useContext(AuthContext)
     return (
         <div ref={homeRef} className="flex flex-col px-4 sm:px-0 md:flex-row my-10 justify-between items-center  ">
 
@@ -88,12 +88,12 @@ const Hero = () => {
                     >
                         Resume
                     </a>
-                    <Link
-                        to="/contact"
+                    <button
+                        onClick={()=>goToProjectSection(contactRef)}
                         className="px-3 sm:px-6 py-1 sm:py-2 border border-green-400  shadow-lg shadow-white/30 text-green-400 rounded-lg hover:bg-green-500 hover:text-black transition text-sm sm:text-base"
                     >
                         Contact Me
-                    </Link>
+                    </button>
                 </div>
             </div>
 

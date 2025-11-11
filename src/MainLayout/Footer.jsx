@@ -5,7 +5,7 @@ import { SiLeetcode } from "react-icons/si";
 
 export const Footer = () => {
     return (
-        <footer className="bg-black/80 backdrop-blur-md text-gray-300 px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-3xl md:px-24 lg:px-8">
+        <footer className="bg-black/80 backdrop-blur-md text-gray-300 px-4 pt-16 max-w-[1400px] mx-auto md:px-24 lg:px-8">
             <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
     
                 <div className="md:max-w-md lg:col-span-2">

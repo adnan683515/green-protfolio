@@ -11,7 +11,7 @@ import { AuthContext } from '../Context/AuthContext';
 const Hero = () => {
     const { homeRef ,contactRef ,goToProjectSection } = useContext(AuthContext)
     return (
-        <div ref={homeRef} className="flex flex-col px-4 sm:px-0 md:flex-row my-10 justify-between items-center  ">
+        <div ref={homeRef} className="flex flex-col px-4 sm:px-0 md:flex-row my-10 justify-between items-center max-w-[1400px] mx-auto ">
 
 
             <div className="flex-1 space-y-6 border md:pr-12 my-4 sm:my-0">

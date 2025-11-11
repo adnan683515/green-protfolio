@@ -9,23 +9,23 @@ import Contact from '../Contact/Contact';
 
 const Home = () => {
     return (
-        <div className='max-w-[1500px] mx-auto'>
+        <div className='mx-auto'>
 
             <Hero></Hero>
 
 
             <About></About>
 
-            <div className='sm:my-20 my-10'>
+            <div className='sm:my-20 my-10 max-w-[1400px] mx-auto'>
                 <Skill></Skill>
             </div>
 
-            <div className='sm:my-20 my-10'>
+            <div className='sm:my-20 my-10 max-w-[1400px] mx-auto'>
                 <Project></Project>
             </div>
 
 
-         <div>
+         <div className='max-w-[1400px] mx-auto'>
 
             <div className='sm:mt-20 my-10'>
                 <h1 className='text-4xl text-center text-green-400 font-semibold'>Contact Me</h1>

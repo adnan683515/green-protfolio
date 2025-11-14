@@ -8,10 +8,10 @@ export default function LanyardCard({
     href = "#",
 }) {
     return (
-        <section className="relative w-full flex flex-col items-center py-12 sm:py-24 px-4 sm:px-12">
+        <section className="relative w-full flex flex-col items-center py-12 sm:py-24 px-2 sm:px-12">
 
 
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-green-400 mb-10 sm:mb-12 text-center">
+            <h2 className="text-3xl text-white sm:text-5xl md:text-6xl font-bold sm:text-green-400 mb-10 sm:mb-12 text-center">
                 About Me
             </h2>
 

@@ -1,6 +1,7 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProjectsDetails from "./ProjectsDetails";
+import gsap from "gsap";
 
 const SpotlightCard = ({
     id = '',
@@ -19,7 +20,7 @@ const SpotlightCard = ({
 
 
     let [isOpen, setIsOpen] = useState(false)
-    const [storeId,setStoreId] = useState(null)
+    const [storeId, setStoreId] = useState(null)
 
 
     function close() {
@@ -94,6 +95,27 @@ const SpotlightCard = ({
 
 
 export default function SpotlightProjects() {
+
+
+
+    const firstProject = useRef(null)
+
+    useEffect(() => {
+
+        const ctx = gsap.context(() => {
+
+            gsap.from(firstProject.current, {
+                y: 200,
+                duration: 1,
+                opacity: 0,
+                stagger: 1,
+                markers: true
+            })
+        })
+
+        return () => ctx.revert();
+    }, [])
+
     const projects = [
         {
             id: 1,
@@ -136,11 +158,11 @@ export default function SpotlightProjects() {
     ];
 
     return (
-        <section className="py-12 px-6 border sm:px-12">
+        <section className="py-12 px-2 border sm:px-12">
             <h2 className="text-center text-4xl sm:text-5xl font-bold text-green-400 mb-12">
                 My Projects
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div ref={firstProject} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((proj, idx) => (
                     <SpotlightCard key={idx} {...proj} />
                 ))}

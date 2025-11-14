@@ -4,7 +4,7 @@ import { AuthContext } from "../Context/AuthContext";
 
 const Contact = () => {
 
-    const {contactRef} = useContext(AuthContext)
+    const { contactRef } = useContext(AuthContext)
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -24,8 +24,8 @@ const Contact = () => {
     };
 
     return (
-        <section ref={contactRef} className="py-16 px-2 sm:px-0 mx-2 sm:px-0  text-gray-200 min-h-screen">
-            <div className="max-w-8xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <section ref={contactRef} className="py-16  w-[100%]    sm:px-0  text-gray-200 ">
+            <div className="  grid md:grid-cols-2 gap-12 items-center">
 
 
                 <div className="space-y-6">
@@ -34,13 +34,13 @@ const Contact = () => {
                         Got a question or want to work together? I’d love to hear from you. Fill out the form and I’ll get back to you as soon as possible.
                     </p>
                     <p className="text-gray-400">
-                        You can also reach me via email: <span className="text-green-400">your-email@example.com</span>
+                        You can also reach me via email: <span className="text-green-400">golamfaruk680@.com</span>
                     </p>
                 </div>
 
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-black/70 w-full mx-auto backdrop-blur-md border border-green-400/30 rounded-2xl p-8 space-y-4 shadow-lg shadow-green-400/20"
+                    className="bg-black/70    backdrop-blur-md border border-green-400/30 p-2 rounded-2xl sm:p-8 space-y-4 shadow-lg shadow-green-400/20"
                 >
                     <div className="flex flex-col sm:flex-row gap-4">
                         <input

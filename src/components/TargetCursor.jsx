@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaCrosshairs } from "react-icons/fa";
 
 export default function TargetCursor({ spinDuration = 2, hideDefaultCursor = true }) {
+
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [smoothPos, setSmoothPos] = useState({ x: 0, y: 0 });
 
@@ -31,7 +32,7 @@ export default function TargetCursor({ spinDuration = 2, hideDefaultCursor = tru
         <>
             {hideDefaultCursor && <style>{`body { cursor: none; }`}</style>}
             <div
-                className="fixed w-8 h-8 text-green-400 pointer-events-none flex items-center justify-center"
+                className="fixed w-8 h-8 z-100 text-green-400 pointer-events-none flex items-center justify-center"
                 style={{
                     top: smoothPos.y,
                     left: smoothPos.x,

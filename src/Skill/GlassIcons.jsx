@@ -33,7 +33,7 @@ const GlassIconsMarquee = () => {
     return (
         <div className="space-y-6 py-12 bg-black/60">
 
-            <Marquee speed={40} gradient={false}>
+            <Marquee speed={40} gradient={false} className="   ">
                 <div className="flex gap-6">
                     {firstRow.map((item, idx) => (
                         <div

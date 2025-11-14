@@ -23,10 +23,6 @@ const Navber = () => {
         <nav className="sticky top-0 bg-white/10 backdrop-blur-md shadow-md z-50">
             <div className="max-w-[1500px] mx-auto px-4 flex justify-between items-center h-16">
 
-
-
-
-
                 <button
 
                     className="text-2xl font-bold text-green-400"
